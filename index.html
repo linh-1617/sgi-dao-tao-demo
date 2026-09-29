@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>SGI | Quản lý đào tạo - Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login-gate" class="login-gate">
+    <div class="login-card">
+      <div class="brand-mark">SGI</div>
+      <h1>Quản lý đào tạo khu vực</h1>
+      <p class="muted">Bản demo Mục 1 + 2: Danh mục trung tâm và Quản lý học viên/phân lớp.</p>
+      <form id="login-form">
+        <label>Tài khoản
+          <input id="login-user" autocomplete="username" value="admin" />
+        </label>
+        <label>Mật khẩu
+          <input id="login-pass" type="password" autocomplete="current-password" value="sgi2026" />
+        </label>
+        <button class="btn primary wide" type="submit">Vào hệ thống</button>
+      </form>
+      <p class="login-hint">Demo: <strong>admin / sgi2026</strong>. Không dùng cơ chế này cho hệ thống thật.</p>
+      <div id="login-error" class="error-text"></div>
+    </div>
+  </div>
+
+  <div id="app-shell" class="app-shell hidden">
+    <aside class="sidebar no-print">
+      <div class="sidebar-brand">
+        <div class="brand-mark small">SGI</div>
+        <div>
+          <strong>Đào tạo</strong>
+          <span>K26 · BRVT</span>
+        </div>
+      </div>
+      <nav id="main-nav">
+        <button data-page="dashboard" class="nav-item active"><span>▦</span>Tổng quan</button>
+        <div class="nav-section">ĐÀO TẠO</div>
+        <button data-page="students" class="nav-item"><span>👥</span>Học viên</button>
+        <button data-page="classes" class="nav-item"><span>🏫</span>Lớp học</button>
+        <div class="nav-section">DANH MỤC</div>
+        <button data-page="catalogs" class="nav-item"><span>☷</span>Danh mục dùng chung</button>
+        <div class="nav-section">HỆ THỐNG</div>
+        <button data-page="validation" class="nav-item"><span>⚠</span>Kiểm tra dữ liệu <span id="nav-issue-count" class="badge warn">0</span></button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div><strong>Quản trị demo</strong><span>BRVT</span></div>
+        </div>
+        <button id="logout-btn" class="link-button">Đăng xuất</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar no-print">
+        <div>
+          <h1 id="page-title">Tổng quan</h1>
+          <p id="page-subtitle">Quản lý dữ liệu đào tạo khu vực Bà Rịa – Vũng Tàu</p>
+        </div>
+        <div class="top-actions">
+          <span class="status-pill">● Demo Local</span>
+          <button id="reset-demo" class="btn ghost">Khôi phục dữ liệu mẫu</button>
+        </div>
+      </header>
+      <section id="page-content" class="content"></section>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
